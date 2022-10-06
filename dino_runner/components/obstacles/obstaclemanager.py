@@ -16,6 +16,7 @@ class ObstacleManager:
             if game.player.dino_rect.colliderect(obstacle.rect):
                 pygame.time.delay(500)
                 game.playing=False
+                game.running=False
                 break
 
     def draw (self,screen):
