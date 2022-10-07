@@ -25,6 +25,7 @@ class dinosaur(Sprite):
         self.dino_duck=False
         self.dino_jump=False
         self.jump_level=self.JUMP_LEVEL
+        self.shield=True
 
         self.setup_states_boolenas()
  
@@ -90,7 +91,7 @@ class dinosaur(Sprite):
     
     def check_invincilibility(self,screen):
         if self.shield:
-            time_to_show=round((self.shield_time_up - pygame.time.get_ticks())/1000,2)
+            time_to_show=round((self.shield_time_up - pygame.time.get_ticks())//1000,2)
             if time_to_show>0:
                 if self.show_text:
                     fond=pygame.font.Font("freesansbold.ttf", 18)

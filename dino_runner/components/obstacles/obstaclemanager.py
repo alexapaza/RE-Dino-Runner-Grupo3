@@ -46,6 +46,7 @@ class ObstacleManager:
 
                 else:
                     self.obstacles.remove(obstacle)
+                    # game.player.shield=False
 
     def draw (self,screen):
         for obstacle in self.obstacles:
