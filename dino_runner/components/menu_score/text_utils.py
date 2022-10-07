@@ -8,8 +8,7 @@ def get_score_element(points):
     
     text=font.render("Points: "+str(points),False,black_color)
     text_rect=text.get_rect()
-    text_rect.center=(1000,40)
-    
+    text_rect.center=(1000,40) 
     return text,text_rect
 
 def get_centered_message(message, width=SCREEN_WIDTH//2,height=SCREEN_HEIGHT//2):
