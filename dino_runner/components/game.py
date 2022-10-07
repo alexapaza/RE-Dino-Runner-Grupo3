@@ -1,11 +1,11 @@
 import pygame
-from dino_runner.utils.constants import BG,ICON,RUNNING,SCREEN_HEIGHT,SCREEN_WIDTH,TITLE,FPS
+import random
+from dino_runner.utils.constants import BG,CLOUD,ICON,RUNNING,SCREEN_HEIGHT,SCREEN_WIDTH,TITLE,FPS
 from dino_runner.components.dinosaur.dinosaur import dinosaur
 from dino_runner.components.obstacles.obstaclemanager import ObstacleManager
 from dino_runner.components.menu_score.text_utils import get_score_element, get_centered_message
 from dino_runner.components.player_hearts.PlayerHeartManager  import PlayerHeartManager
 from dino_runner.components.powerups.powerupmanager import PowerUpManager
-
 
 
 class Game:
@@ -15,8 +15,8 @@ class Game:
           pygame.display.set_icon(ICON)
           self.screen=pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
           self.clock=pygame.time.Clock()
-          # self.color_bg=(33,33,33)
-          self.color_bg=(255,255,255)
+          self.color_bg=(33,33,33)
+          # self.color_bg=(255,255,255)
 
           self.playing=False
           self.game_speed=20
@@ -70,7 +70,9 @@ class Game:
           image_with=BG.get_width()
           self.screen.blit(BG,(self.x_pos_bg,self.y_pos_bg))
           self.screen.blit(BG,(image_with+self.x_pos_bg,self.y_pos_bg))
+          self.screen.blit(CLOUD,(image_with+self.x_pos_bg,100))
           if self.x_pos_bg<=-image_with:
+               self.screen.blit(CLOUD,(image_with+self.x_pos_bg,100))
                self.screen.blit(BG,(image_with+self.x_pos_bg,150))
                self.x_pos_bg=0
           self.x_pos_bg-=self.game_speed

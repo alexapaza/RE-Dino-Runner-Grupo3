@@ -91,7 +91,7 @@ class dinosaur(Sprite):
     def check_invincilibility(self,screen):
         if self.shield:
             time_to_show=round((self.shield_time_up - pygame.time.get_ticks())/1000,2)
-            if time_to_show>=0:
+            if time_to_show>0:
                 if self.show_text:
                     fond=pygame.font.Font("freesansbold.ttf", 18)
                     text=fond.render(f"shield enable for{time_to_show}",True,(0,0,0))
