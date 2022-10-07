@@ -10,12 +10,11 @@ class Obstacle(Sprite):
 
     
     def update(self, game_speed, obstacles):
-        #print("mi erro:",game_speed)
-        #self.rect.x = self.rect.x - game_speed
-
-        
-        if self.rect.x < -self.rect.width:
+       self.rect.x -= game_speed
+       if self.rect.x < -self.rect.width:
             obstacles.pop()
+        
+
 
     def draw(self, screen):
         screen.blit(self.image[self.type], self.rect)
